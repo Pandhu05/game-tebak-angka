@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Game Tebak Angka</title>
+</head>
+<body>
+  <h1>Tebak Angka 1 - 10</h1>
+  <input type="number" id="tebakan" min="1" max="10">
+  <button onclick="cekTebakan()">Cek</button>
+  <p id="hasil"></p>
+
+  <script>
+    const angkaBenar = Math.floor(Math.random() * 10) + 1;
+    function cekTebakan() {
+      const input = document.getElementById("tebakan").value;
+      const hasil = document.getElementById("hasil");
+      if (parseInt(input) === angkaBenar) {
+        hasil.textContent = "Benar! Kamu menang 🎉";
+      } else {
+        hasil.textContent = "Salah. Coba lagi!";
+      }
+    }
+  </script>
+</body>
+</html>
